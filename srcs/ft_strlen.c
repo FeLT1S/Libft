@@ -6,11 +6,11 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/30 23:31:32 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/05 06:24:56 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/05 21:26:26 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 #define LOWBITS ((unsigned long)-1 / (unsigned char)-1)
 #define HIGHBITS (LOWBITS << 7)
 

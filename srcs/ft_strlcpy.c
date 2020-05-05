@@ -1,26 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/02 02:26:52 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/05 22:18:10 by jiandre          ###   ########.fr       */
+/*   Created: 2020/05/05 22:21:31 by jiandre           #+#    #+#             */
+/*   Updated: 2020/05/05 23:42:02 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-void			*ft_memccpy(void *dst, const void *src, int c, size_t n)
+size_t		ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	const void	*src2;
-
-	if ((src2 = ft_memchr(src, c, n)))
+	if (size)
 	{
-		ft_memcpy(dst, src, src2 - src + 1);
-		return (dst + (src2 - src + 1));
+		ft_memcpy(dst, src, size - 1);
+		*(dst + size - 1) = '\0';
+		return (ft_strlen(src));
 	}
-	ft_memcpy(dst, src, n);
-	return (0);
+	else
+	{
+		*dst = '\0';
+		return (0);
+	}
+}
+
+
+int main()
+{
+	char str[20] = "abcdefgh";
+	char str2[20] = "abcde";
+	int n = ft_strlcpy(str2, str, 5);
+	printf("%s", str2);
+	printf("%d", n);
 }

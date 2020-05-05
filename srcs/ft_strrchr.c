@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/02 04:22:41 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/05 22:18:13 by jiandre          ###   ########.fr       */
+/*   Created: 2020/05/05 23:05:12 by jiandre           #+#    #+#             */
+/*   Updated: 2020/05/05 23:26:18 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,28 @@
 #define LOWBITS ((unsigned long)-1 / (unsigned char)-1)
 #define HIGHBITS (LOWBITS << 7)
 
-void					*ft_memchr(const void *s, int c, size_t n)
+char *ft_strrchr (const char *str, int c)
 {
-	const unsigned char	*ch;
+	const char			*ch;
 	const unsigned long	*long_ch;
 	const unsigned long	long_c = (unsigned long)c * LOWBITS;
-
-	ch = s;
-	while (((unsigned long)ch & (sizeof(long) - 1)) != 0 && n--)
+	
+	ch = str + ft_strlen(str);
+	while (((unsigned long)ch & (sizeof(long) - 1)) != 0 && ch != str)
 	{
-		if (*ch == (char)c)
+		if (*ch == (char)ch)
 			return ((void *)ch);
 		ch++;
 	}
 	long_ch = (unsigned long*)ch;
+	long_ch--;
 	while (((((*long_ch ^ long_c) - LOWBITS) & ~(*long_ch ^ long_c)
-	& HIGHBITS) == 0) && (n > sizeof(long)))
-	{
-		n = n - sizeof(long);
-		long_ch++;
-	}
+	& HIGHBITS) == 0) && (ch - str > sizeof(long)))
+		long_ch--;
 	ch = (unsigned char*)long_ch;
-	while (*ch != (char)c && n--)
-		ch++;
-	if (n + 1)
+	while (*ch != (char)c && str != ch)
+		ch--;
+	if (*ch == (char)c)
 		return ((void *)ch);
 	return (0);
 }

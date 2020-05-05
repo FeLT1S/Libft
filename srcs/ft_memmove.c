@@ -6,11 +6,11 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 00:13:32 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/05 04:10:31 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/05 20:52:08 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void					*ft_memmove(void *dst, const void *src, size_t n)
 {

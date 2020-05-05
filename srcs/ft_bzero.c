@@ -6,11 +6,11 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 02:19:17 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/05 06:25:19 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/05 22:30:29 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

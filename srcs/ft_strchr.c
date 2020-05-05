@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/02 02:26:52 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/05 22:18:10 by jiandre          ###   ########.fr       */
+/*   Created: 2020/05/05 22:58:38 by jiandre           #+#    #+#             */
+/*   Updated: 2020/05/05 23:00:39 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void			*ft_memccpy(void *dst, const void *src, int c, size_t n)
+char	*strchr( const char *string, int symbol)
 {
-	const void	*src2;
-
-	if ((src2 = ft_memchr(src, c, n)))
-	{
-		ft_memcpy(dst, src, src2 - src + 1);
-		return (dst + (src2 - src + 1));
-	}
-	ft_memcpy(dst, src, n);
-	return (0);
+	return(ft_memchr(string, symbol, ft_strlen(string)));
 }

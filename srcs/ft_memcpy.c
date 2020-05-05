@@ -6,11 +6,11 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/01 20:24:44 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/05 05:06:09 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/05 20:51:59 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 void					*ft_memcpy(void *dst, const void *src, size_t n)
 {
