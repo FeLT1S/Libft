@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/30 23:31:32 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/05 05:06:21 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/05 06:24:56 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 #define LOWBITS ((unsigned long)-1 / (unsigned char)-1)
 #define HIGHBITS (LOWBITS << 7)
 
-size_t				ft_strlen(const char *s)
+size_t						ft_strlen(const char *s)
 {
 	const unsigned char		*ch;
-	unsigned long	oct_byte;
+	unsigned long			oct_byte;
 
 	ch = (unsigned char*)s;
 	while (((unsigned long)ch & (sizeof(long) - 1)) != 0)

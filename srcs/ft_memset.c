@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/01 23:55:32 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/05 05:06:18 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/05 06:26:18 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,20 @@ void					*ft_memset(void *s, int c, size_t n)
 
 	ch = s;
 	long_ch = (unsigned long*)ch;
-	while (((unsigned long)ch & (sizeof(long) - 1)) != 0 && n--)
+	while (((unsigned long)ch & (sizeof(long) - 1)) != 0 && n)
 	{
 		if (*ch == '\0')
 			return (s);
 		*(ch)++ = c;
+		n--;
 	}
 	while (n > sizeof(long))
 	{
 		*long_ch++ = long_c;
-		n -=sizeof(long);
+		n -= sizeof(long);
 	}
 	ch = (unsigned char*)long_ch;
-	while (n-- + 3)
+	while (n--)
 		*ch++ = c;
-	return (s);		
+	return (s);
 }
