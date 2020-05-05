@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 04:22:41 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/04 23:21:43 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/05 05:06:06 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void					*ft_memchr(const void *s, int c, size_t n)
 	ch = s;
 	while (((unsigned long)ch & (sizeof(long) - 1)) != 0 && n--)
 	{
-		if (*ch == '\0')
+		if (*ch == (char)c)
 			return ((void *)ch);
 		ch++;
 	}
@@ -41,29 +41,4 @@ void					*ft_memchr(const void *s, int c, size_t n)
 	if (n + 1)
 		return ((void *)ch);
 	return (0);
-}
-
-int main (void)
-{
-   // Исходный массив
-   unsigned char src[15]="1234567890";
-   // Переменная, в которую будет сохранен указатель
-   // на искомый символ.
-   char *sym;
-
-   // Вывод исходного массива
-   printf ("src old: %s\n",src);
-
-   // Поиск требуемого символа
-   sym = ft_memchr (src, '', 10);
-
-   // Если требуемый символ найден, то заменяем его
-   // на символ '!'
-   if (sym != NULL)
-      sym[0]='!';
-
-   // Вывод исходного массива
-   printf ("src new: %s\n",src);
-
-   return 0;
 }
