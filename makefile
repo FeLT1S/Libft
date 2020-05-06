@@ -6,7 +6,7 @@
 #    By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/06 23:47:35 by jiandre           #+#    #+#              #
-#    Updated: 2020/05/07 00:54:42 by Student          ###   ########.fr        #
+#    Updated: 2020/05/07 01:07:20 by Student          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,9 +39,6 @@ $(NAME): $(OBJ_DIR) $(OBJS) $(HEAD)
 	@echo "\033[1;32mlibft.a was built\033[0m"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	@clang $F -g -c $< -I$(INC_DIR) -o$@
-
-$(PFT_OBJ_DIR)/%.o: $(PFT_SRC_DIR)/%.c
 	@clang $F -g -c $< -I$(INC_DIR) -o$@
 
 clean:
