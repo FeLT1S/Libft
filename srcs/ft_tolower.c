@@ -6,11 +6,11 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/06 03:05:16 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/06 03:09:04 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/06 03:33:25 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		tolower(int c)
+int		ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'A')
 		c = c + 32;

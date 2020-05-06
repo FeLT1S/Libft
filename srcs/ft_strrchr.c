@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 23:05:12 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/05 23:26:18 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/06 03:41:31 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 #define LOWBITS ((unsigned long)-1 / (unsigned char)-1)
 #define HIGHBITS (LOWBITS << 7)
 
-char *ft_strrchr (const char *str, int c)
+char					*ft_strrchr(const char *str, int c)
 {
 	const char			*ch;
 	const unsigned long	*long_ch;
 	const unsigned long	long_c = (unsigned long)c * LOWBITS;
-	
+
 	ch = str + ft_strlen(str);
 	while (((unsigned long)ch & (sizeof(long) - 1)) != 0 && ch != str)
 	{

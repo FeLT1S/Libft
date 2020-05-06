@@ -6,18 +6,18 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 23:33:14 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/06 00:00:07 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/06 03:37:16 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char * strnstr (const char *big, const char *little, size_t len)
+char			*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	const char *ch_big;
-	const char *ch_little;
-	const char *ch_litinbig;
-	
+	const char	*ch_big;
+	const char	*ch_little;
+	const char	*ch_litinbig;
+
 	ch_big = big;
 	ch_little = little;
 	while (*ch_big != *ch_little && len--)

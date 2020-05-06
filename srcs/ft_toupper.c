@@ -6,11 +6,11 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/06 03:02:54 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/06 03:09:30 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/06 03:36:41 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
+int		ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		c = c - 32;

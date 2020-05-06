@@ -6,11 +6,11 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/06 02:58:27 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/06 03:06:11 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/06 03:35:35 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isascii(int c)
+int		ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
 		return (1);

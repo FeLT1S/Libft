@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/05 22:42:53 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/06 03:43:11 by jiandre          ###   ########.fr       */
+/*   Created: 2020/05/06 03:15:48 by jiandre           #+#    #+#             */
+/*   Updated: 2020/05/06 03:36:32 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlcat(char *dst, const char *src, size_t size)
+char		*ft_strdup(const char *s)
 {
-	char	*len_dst;
+	char	*dst;
+	size_t	len;
 
-	if (size)
-	{
-		len_dst = dst + ft_strlen(dst);
-		ft_memcpy(len_dst, src, size - 1);
-		*(len_dst + size) = '\0';
-		return (ft_strlen(dst));
-	}
-	else
-	{
-		*dst = '\0';
-		return (0);
-	}
+	len = ft_strlen(s);
+	dst = (char *)malloc(sizeof(char) * len);
+	ft_strlcpy(dst, s, len + 1);
+	return (dst);
 }
