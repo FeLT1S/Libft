@@ -6,7 +6,7 @@
 #    By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/06 23:47:35 by jiandre           #+#    #+#              #
-#    Updated: 2020/05/07 00:14:45 by jiandre          ###   ########.fr        #
+#    Updated: 2020/05/07 00:46:37 by jiandre          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,6 @@ NAME = libft.a
 INC_DIR		= ./inc
 SRC_DIR		= ./srcs
 OBJ_DIR		= ./obj
-PFT_DIR		= ./ft_printf
 PFT_SRC_DIR	= $(PFT_DIR)/src
 PFT_OBJ_DIR	= $(PFT_DIR)/obj
 
@@ -28,7 +27,7 @@ ft_memset.c   ft_strdup.c  ft_strlcpy.c  ft_strncmp.c  ft_strrchr.c  ft_toupper.
 
 OBJS	=	$(addprefix $(OBJ_DIR)/,$(SRC:%.c=%.o))
 
-#F = -Wall -Wextra -Werror
+F = -Wall -Wextra -Werror
 
 all: $(NAME)
 
@@ -44,10 +43,10 @@ $(NAME): $(OBJ_DIR) $(OBJS) $(HEAD) $(PFT_OBJ_DIR) $(PFT_OBJS) $(PFT_HEAD)
 	@echo "\033[1;32mlibft.a was built\033[0m"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	@gcc $F -g -c $< -I$(INC_DIR) -o$@
+	@clang $F -g -c $< -I$(INC_DIR) -o$@
 
 $(PFT_OBJ_DIR)/%.o: $(PFT_SRC_DIR)/%.c
-	@gcc $F -g -c $< -I$(INC_DIR) -o$@
+	@clang $F -g -c $< -I$(INC_DIR) -o$@
 
 clean:
 	@rm -Rf $(OBJ_DIR) $(PFT_OBJ_DIR)

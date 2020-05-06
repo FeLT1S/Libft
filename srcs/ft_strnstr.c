@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 23:33:14 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/06 03:37:16 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/07 00:34:00 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ char			*ft_strnstr(const char *big, const char *little, size_t len)
 		len--;
 	}
 	if (*ch_little == '\0')
-		return (ch_litinbig);
+		return ((char*)ch_litinbig);
 	return (0);
 }

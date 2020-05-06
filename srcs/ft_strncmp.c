@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/06 00:38:47 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/06 03:40:36 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/07 00:35:29 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int						ft_strncmp(const char *s1, const char *s2, size_t n)
 
 	long_s1 = (const unsigned long*)s1;
 	long_s2 = (const unsigned long*)s2;
-	while (*long_s1 == *long_s2 && n && s1 != '\0' && s2 != '\0')
+	while (*long_s1 == *long_s2 && n && *s1 != '\0' && *s2 != '\0')
 	{
 		n = n - sizeof(long);
 		long_s1++;
@@ -29,7 +29,7 @@ int						ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	ch_s1 = (const char*)long_s1;
 	ch_s2 = (const char*)long_s2;
-	while (*ch_s1 == *ch_s2 && n && s1 != '\0' && s2 != '\0')
+	while (*ch_s1 == *ch_s2 && n && *s1 != '\0' && *s2 != '\0')
 	{
 		n--;
 		ch_s1++;
