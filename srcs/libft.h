@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 20:44:17 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/05 21:55:02 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/06 02:39:45 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <string.h>
 #include <stdlib.h>
 
+int						ft_atoi(const char *ch);
 void					ft_bzero(void *s, size_t n);
 void					*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void					*ft_memchr(const void *s, int c, size_t n);
