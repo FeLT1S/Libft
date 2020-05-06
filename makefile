@@ -6,7 +6,7 @@
 #    By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/06 23:47:35 by jiandre           #+#    #+#              #
-#    Updated: 2020/05/07 00:46:37 by jiandre          ###   ########.fr        #
+#    Updated: 2020/05/07 00:54:42 by Student          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,6 @@ NAME = libft.a
 INC_DIR		= ./inc
 SRC_DIR		= ./srcs
 OBJ_DIR		= ./obj
-PFT_SRC_DIR	= $(PFT_DIR)/src
-PFT_OBJ_DIR	= $(PFT_DIR)/obj
 
 HEAD		= $(INC_DIR)/libft.h
 
@@ -34,11 +32,9 @@ all: $(NAME)
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
 
-$(PFT_OBJ_DIR):
-	@mkdir -p $(PFT_OBJ_DIR)
 
-$(NAME): $(OBJ_DIR) $(OBJS) $(HEAD) $(PFT_OBJ_DIR) $(PFT_OBJS) $(PFT_HEAD)
-	@ar rc $(NAME) $(OBJS) $(PFT_OBJS)
+$(NAME): $(OBJ_DIR) $(OBJS) $(HEAD)
+	@ar rc $(NAME) $(OBJS)
 	@ranlib $(NAME)
 	@echo "\033[1;32mlibft.a was built\033[0m"
 
@@ -49,7 +45,7 @@ $(PFT_OBJ_DIR)/%.o: $(PFT_SRC_DIR)/%.c
 	@clang $F -g -c $< -I$(INC_DIR) -o$@
 
 clean:
-	@rm -Rf $(OBJ_DIR) $(PFT_OBJ_DIR)
+	@rm -Rf $(OBJ_DIR)
 
 fclean: clean
 	@rm -f $(NAME)
