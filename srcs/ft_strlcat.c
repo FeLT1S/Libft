@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 22:42:53 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/06 03:43:11 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/06 22:50:48 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,9 @@ size_t		ft_strlcat(char *dst, const char *src, size_t size)
 
 	if (size)
 	{
-		len_dst = dst + ft_strlen(dst);
-		ft_memcpy(len_dst, src, size - 1);
+		ft_memcpy(ft_strlen(src), dst, size - 1);
 		*(len_dst + size) = '\0';
-		return (ft_strlen(dst));
+		return (ft_strlen(src));
 	}
 	else
 	{

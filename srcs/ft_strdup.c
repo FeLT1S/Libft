@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/06 03:15:48 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/06 03:36:32 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/06 18:27:04 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char		*ft_strdup(const char *s)
 
 	len = ft_strlen(s);
 	dst = (char *)malloc(sizeof(char) * len);
+	if (!dst)
+		return (0);
 	ft_strlcpy(dst, s, len + 1);
 	return (dst);
 }
