@@ -6,11 +6,11 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/01 23:55:32 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/05 21:21:24 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/07 18:26:39 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 #define LOWBITS ((unsigned long)-1 / (unsigned char)-1)
 
 void					*ft_memset(void *s, int c, size_t n)
