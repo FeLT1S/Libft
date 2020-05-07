@@ -6,7 +6,7 @@
 #    By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/06 23:47:35 by jiandre           #+#    #+#              #
-#    Updated: 2020/05/07 01:55:22 by jiandre          ###   ########.fr        #
+#    Updated: 2020/05/07 19:33:16 by jiandre          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,14 +18,14 @@ OBJ_DIR		= ./obj
 
 HEAD		= $(INC_DIR)/libft.h
 
-SRC		=	 ft_atoi.c   ft_calloc.c   ft_isalpha.c  ft_isdigit.c  ft_memccpy.c  ft_memcmp.c \
+SRC		=	 ft_atoi.c   ft_calloc.c   ft_isalpha.c  ft_isdigit.c ft_itoa.c  ft_memccpy.c  ft_memcmp.c \
 ft_memmove.c  ft_strchr.c  ft_strlcat.c  ft_strlen.c   ft_strnstr.c  ft_tolower.c \
 ft_bzero.c  ft_isalnum.c  ft_isascii.c  ft_isprint.c  ft_memchr.c   ft_memcpy.c  \
 ft_memset.c   ft_strdup.c  ft_strlcpy.c  ft_strncmp.c  ft_strrchr.c  ft_toupper.c
 
 OBJS	=	$(addprefix $(OBJ_DIR)/,$(SRC:%.c=%.o))
 
-F = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
@@ -36,16 +36,18 @@ $(OBJ_DIR):
 $(NAME): $(OBJ_DIR) $(OBJS) $(HEAD) $(PFT_OBJ_DIR) $(PFT_OBJS) $(PFT_HEAD)
 	@ar rc $(NAME) $(OBJS) $(PFT_OBJS)
 	@ranlib $(NAME)
-	@echo "\033[1;32mlibft.a was built\033[0m"
+	@echo "libft.a was created"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@clang $F -g -c $< -I$(INC_DIR) -o$@
 
 clean:
 	@rm -Rf $(OBJ_DIR) $(PFT_OBJ_DIR)
+	@echo "Objects was deleted"
 
 fclean: clean
 	@rm -f $(NAME)
+	@echo "libft.a was deleted"
 
 re: fclean all
 
