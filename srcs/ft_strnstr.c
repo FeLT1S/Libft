@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 23:33:14 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/07 00:34:00 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/07 07:25:00 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,12 @@ char			*ft_strnstr(const char *big, const char *little, size_t len)
 
 	ch_big = big;
 	ch_little = little;
+	if (*little == '\0')
+		return ((void*)ch_big);
 	while (*ch_big != *ch_little && len--)
 		ch_big++;
 	ch_litinbig = ch_big;
-	while (ch_little == ch_big && len)
+	while (*ch_little == *ch_big && len)
 	{
 		ch_little++;
 		ch_big++;

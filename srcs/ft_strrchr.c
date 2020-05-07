@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 23:05:12 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/07 00:44:35 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/07 07:45:56 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,12 @@ char					*ft_strrchr(const char *str, int c)
 	{
 		if (*ch == (char)c)
 			return ((void *)ch);
-		ch++;
+		ch--;
 	}
 	long_ch = (unsigned long*)ch;
-	long_ch--;
-	while (((((*long_ch ^ long_c) - LOWBITS) & ~(*long_ch ^ long_c)
+	while (((((*(long_ch - 1) ^ long_c) - LOWBITS) & ~(*(long_ch - 1) ^ long_c)
 	& HIGHBITS) == 0) && (ch - str > (long int)sizeof(long)))
-		long_ch--;
+		--long_ch;
 	ch = (const char*)long_ch;
 	while (*ch != (char)c && str != ch)
 		ch--;
