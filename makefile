@@ -6,7 +6,7 @@
 #    By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/06 23:47:35 by jiandre           #+#    #+#              #
-#    Updated: 2020/05/07 22:47:03 by jiandre          ###   ########.fr        #
+#    Updated: 2020/05/08 07:31:14 by jiandre          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,9 +19,9 @@ OBJ_DIR		= ./obj
 HEAD		= $(INC_DIR)/libft.h
 
 SRC		=	 ft_atoi.c   ft_calloc.c   ft_isalpha.c  ft_isdigit.c ft_itoa.c  ft_memccpy.c  ft_memcmp.c \
-ft_memmove.c  ft_strchr.c  ft_strlcat.c  ft_strlen.c   ft_strnstr.c  ft_tolower.c \
-ft_bzero.c  ft_isalnum.c  ft_isascii.c  ft_isprint.c  ft_memchr.c   ft_memcpy.c  \
-ft_memset.c  ft_split.c  ft_strdup.c  ft_strlcpy.c  ft_strncmp.c  ft_strrchr.c  ft_toupper.c
+ft_memmove.c  ft_strchr.c  ft_strlcat.c  ft_strlen.c   ft_strnstr.c  ft_tolower.c ft_strtrim.c\
+ft_bzero.c  ft_isalnum.c  ft_isascii.c  ft_isprint.c  ft_memchr.c ft_strjoin.c ft_memcpy.c  \
+ft_memset.c  ft_split.c ft_strmapi.c ft_substr.c ft_putchar_fd.c ft_putstr_fd.c  ft_putendl_fd.c ft_putnbr_fd.c ft_strdup.c  ft_strlcpy.c  ft_strncmp.c  ft_strrchr.c  ft_toupper.c
 
 OBJS	=	$(addprefix $(OBJ_DIR)/,$(SRC:%.c=%.o))
 
