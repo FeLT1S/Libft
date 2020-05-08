@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 23:43:45 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/08 03:08:15 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/08 03:12:57 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,19 +32,19 @@ long			ft_words(char const *s, char c, long words)
 char			**ft_wordsplit(size_t words, char c, char const *s, char **out)
 {
 	size_t		wordlen;
-	char const	*d;
+	char const	*tmps;
 	char const	*dtemp;
 
-	d = s;
+	tmps = s;
 	while (words--)
 	{
-		while (*d == c)
-			d++;
-		dtemp = d;
-		d = ft_strchr(d, c);
-		if (d)
-			wordlen = d - dtemp + 1;
-		if (!d)
+		while (*tmps == c)
+			tmps++;
+		dtemp = tmps;
+		tmps = ft_strchr(tmps, c);
+		if (tmps)
+			wordlen = tmps - dtemp + 1;
+		if (!tmps)
 			wordlen = ft_strchr(dtemp, '\0') - dtemp + 1;
 		*out = (char *)malloc(sizeof(char) * wordlen);
 		if (!out)
