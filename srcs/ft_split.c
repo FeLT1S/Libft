@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 23:43:45 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/08 07:47:22 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/10 21:05:31 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,33 +29,43 @@ long			ft_words(char const *s, char c, long words)
 	return (words);
 }
 
-char			**ft_wordsplit(size_t words, char c, char const *s, char **out)
+void			splitfree(char **tmpout, char **out)
+{
+	while (tmpout != out)
+	{
+		free(*tmpout);
+		tmpout++;
+	}
+	free(out);
+}
+
+void			ft_wordsplit(size_t words, char c, char const *s, char **out)
 {
 	size_t		wordlen;
-	char const	*tmps;
+	char		**tmpout;
 	char const	*oldplc;
 
-	tmps = s;
+	tmpout = out;
 	while (words--)
 	{
-		while (*tmps == c)
-			tmps++;
-		oldplc = tmps;
-		tmps = ft_strchr(tmps, c);
-		if (tmps)
-			wordlen = tmps - oldplc + 1;
-		if (!tmps)
+		while (*s == c)
+			s++;
+		oldplc = s;
+		s = ft_strchr(s, c);
+		if (s)
+			wordlen = s - oldplc + 1;
+		if (!s)
 			wordlen = ft_strchr(oldplc, '\0') - oldplc + 1;
 		*out = (char *)malloc(sizeof(char) * wordlen);
 		if (!out)
 		{
-			free(out);
-			return (0);
+			splitfree(tmpout, out);
+			return ;
 		}
 		ft_strlcpy(*out, oldplc, wordlen);
 		out++;
 	}
-	return (out);
+	*out = 0;
 }
 
 char			**ft_split(char const *s, char c)
@@ -63,6 +73,7 @@ char			**ft_split(char const *s, char c)
 	char		**out;
 	size_t		words;
 	char		**tmpout;
+	char const	*tmps;
 
 	words = 0;
 	words = ft_words(s, c, words);
@@ -70,6 +81,9 @@ char			**ft_split(char const *s, char c)
 	if (!out)
 		return (0);
 	tmpout = out;
-	ft_wordsplit(words, c, s, out);
+	tmps = s;
+	ft_wordsplit(words, c, tmps, out);
+	if (!out)
+		return (0);
 	return (tmpout);
 }
