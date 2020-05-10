@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 23:43:45 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/10 21:05:31 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/11 01:31:45 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ char			**ft_split(char const *s, char c)
 	tmpout = out;
 	tmps = s;
 	ft_wordsplit(words, c, tmps, out);
-	if (!out)
+	if (!tmpout)
 		return (0);
 	return (tmpout);
 }
