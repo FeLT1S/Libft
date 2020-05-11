@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 23:43:45 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/11 01:31:45 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/11 17:04:30 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ long			ft_words(char const *s, char c, long words)
 			d++;
 		if (*d == '\0')
 			return (words);
-		d = strchr(d, c);
+		d = ft_strchr(d, c);
 		words++;
 	}
 	return (words);

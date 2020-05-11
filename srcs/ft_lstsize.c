@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 09:24:42 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/08 09:31:37 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/11 17:58:08 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int			ft_lstsize(t_list *lst)
 {
 	t_list	*newlst;
-	int size;
-	
+	int		size;
+
 	if (!lst)
 		return (0);
 	newlst = lst;

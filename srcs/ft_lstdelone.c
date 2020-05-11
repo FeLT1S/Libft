@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 10:20:23 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/08 10:54:09 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/11 17:57:39 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 void		ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	del(lst->content);
+	if (!lst || !del)
+		return ;
+	(*del)(lst->content);
 	free(lst);
-	lst = NULL;
+	lst = 0;
 }

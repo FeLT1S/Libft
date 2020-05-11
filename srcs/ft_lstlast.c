@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 09:32:59 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/08 09:36:51 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/11 17:55:03 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ t_list		*ft_lstlast(t_list *lst)
 	newlst = lst;
 	while (newlst->next != NULL)
 		newlst = newlst->next;
-	return(newlst);
+	return (newlst);
 }
