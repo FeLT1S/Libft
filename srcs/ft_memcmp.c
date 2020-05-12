@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 05:53:20 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/13 00:10:36 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/13 00:11:13 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,13 @@ int						ft_memcmp(const void *s1, const void *s2, size_t n)
 
 	long_s1 = (const unsigned long*)s1;
 	long_s2 = (const unsigned long*)s2;
+	while (*long_s1 == *long_s2 && n > sizeof(long) &&
+	((*long_s1 - LOWBITS) & ~*long_s1 & HIGHBITS) == 0)
+	{
+		n = n - sizeof(long);
+		long_s1++;
+		long_s2++;
+	}
 	ch_s1 = (const unsigned char*)long_s1;
 	ch_s2 = (const unsigned char*)long_s2;
 	while (*ch_s1 == *ch_s2 && n)
