@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 03:14:06 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/12 10:35:36 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/12 11:43:00 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ char				*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 
 	i = 0;
+	if (!s || !f)
+		return (0);
 	dst = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
-	if (!dst || !f || !s)
+	if (!dst)
 		return (0);
 	while (*(s + i) != '\0')
 	{

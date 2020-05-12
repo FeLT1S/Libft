@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 05:47:02 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/12 11:35:27 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/12 11:38:56 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,10 @@ char		*ft_strtrim(char const *s1, char const *set)
 	start = setchecker(s1, set, start);
 	end = setrchecker(s1, set, end) + 1;
 	if (end < start)
+	{
 		if(!(dst = (char *)malloc(sizeof(char))))
 			return (0);
+	}
 	else
 	{
 		if (!(dst = (char *)malloc(sizeof(char) * (end - start + 1))))
