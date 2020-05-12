@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/01 23:55:32 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/12 10:27:23 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/12 11:15:07 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void					*ft_memset(void *s, int c, size_t n)
 {
 	unsigned char		*ch;
 	unsigned long		*long_ch;
-	const unsigned long	long_c = (unsigned long)c * LOWBITS;
+	const unsigned long	long_c = (unsigned char)c * LOWBITS;
 
 	ch = s;
 	long_ch = (unsigned long*)ch;
