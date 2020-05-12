@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 07:12:57 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/12 12:49:59 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/12 13:58:02 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	write(fd, (unsigned char*)&c, 1);
+	write(fd, &c, 1);
 }

@@ -6,32 +6,35 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 23:33:14 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/07 07:25:00 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/12 20:04:19 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char			*ft_strnstr(const char *big, const char *little, size_t len)
+char			*ft_strnstr(const char *bg, const char *ltle, size_t len)
 {
-	const char	*ch_big;
-	const char	*ch_little;
-	const char	*ch_litinbig;
+	const char	*ch_bg;
+	const char	*ch_ltle;
+	const char	*ch_litinbg;
 
-	ch_big = big;
-	ch_little = little;
-	if (*little == '\0')
-		return ((void*)ch_big);
-	while (*ch_big != *ch_little && len--)
-		ch_big++;
-	ch_litinbig = ch_big;
-	while (*ch_little == *ch_big && len)
+	ch_bg = bg;
+	ch_ltle = ltle;
+	if (*ltle == '\0')
+		return ((void*)ch_bg);
+	while (*ch_bg != *ch_ltle && len)
 	{
-		ch_little++;
-		ch_big++;
+		ch_bg++;
 		len--;
 	}
-	if (*ch_little == '\0')
-		return ((char*)ch_litinbig);
+	ch_litinbg = ch_bg;
+	while (*ch_ltle == *ch_bg && len)
+	{
+		ch_ltle++;
+		ch_bg++;
+		len--;
+	}
+	if (*ch_ltle == '\0')
+		return ((char*)ch_litinbg);
 	return (0);
 }

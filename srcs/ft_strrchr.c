@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 23:05:12 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/12 12:48:55 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/12 13:56:43 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char					*ft_strrchr(const char *str, int c)
 	const unsigned long	*long_ch;
 	const unsigned long	long_c = (unsigned long)c * LOWBITS;
 
-	ch = str + ft_strlen(str) + 1;
+	ch = str + ft_strlen(str);
 	while (((unsigned long)ch & (sizeof(long) - 1)) != 0 && ch != str)
 	{
 		if (*ch == (unsigned char)c)

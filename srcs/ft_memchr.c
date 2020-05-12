@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 04:22:41 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/07 04:15:11 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/12 20:06:44 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ void					*ft_memchr(const void *s, int c, size_t n)
 {
 	const unsigned char	*ch;
 	const unsigned long	*long_ch;
-	const unsigned long	long_c = (unsigned long)c * LOWBITS;
+	const unsigned long	long_c = (unsigned char)c * LOWBITS;
 
 	ch = s;
 	while (((unsigned long)ch & (sizeof(long) - 1)) != 0 && n != 1)
 	{
-		if (*ch == (char)c)
+		if (*ch == (unsigned char)c)
 			return ((void *)ch);
 		ch++;
 		n--;
