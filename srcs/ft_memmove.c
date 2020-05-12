@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 00:13:32 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/12 21:33:51 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/12 22:15:02 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ void					*ft_memmove(void *dst, const void *src, size_t n)
 		return (0);
 	if (dst < src)
 		return (ft_memcpy(dst, src, n));
-	long_dst = (unsigned long*)(dst + n);
-	long_src = (const unsigned long*)(src + n);
+	long_dst = (unsigned long*)(dst + n - 1);
+	long_src = (const unsigned long*)(src + n - 1);
 	while (n > sizeof(long))
 	{
 		*(--long_dst) = *(--long_src);

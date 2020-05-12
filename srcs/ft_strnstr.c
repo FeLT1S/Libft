@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 23:33:14 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/12 21:32:06 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/12 22:11:06 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ char			*ft_strnstr(const char *bg, const char *ltle, size_t len)
 	const char	*ch_ltle;
 	const char	*ch_litinbg;
 
-	if (bg == ltle || len == 0)
-		return (0);	
 	ch_bg = bg;
 	ch_ltle = ltle;
 	if (*ltle == '\0')
