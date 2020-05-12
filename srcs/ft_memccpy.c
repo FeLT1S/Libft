@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 02:26:52 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/13 01:14:30 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/13 02:01:51 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void			*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
 	const void	*src2;
 
+	if (n == 0)
+		return (0);
 	src2 = ft_memchr(src, c, n);
 	if (src2)
 	{
