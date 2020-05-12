@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 05:47:02 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/12 11:38:56 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/12 11:54:16 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,7 @@ char		*ft_strtrim(char const *s1, char const *set)
 	{
 		if (!(dst = (char *)malloc(sizeof(char) * (end - start + 1))))
 			return (0);
-		ft_memcpy(dst, s1 + start, end - start);
+		ft_strlcpy(dst, s1 + start, end - start);
 	}
-	*(dst + ft_strlen(dst) + 1) = '\0';
 	return (dst);
 }
