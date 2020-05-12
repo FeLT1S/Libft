@@ -6,11 +6,13 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 00:13:32 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/12 13:01:05 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/12 21:11:20 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#define LOWBITS ((unsigned long)-1 / (unsigned char)-1)
+#define HIGHBITS (LOWBITS << 7)
 
 void					*ft_memmove(void *dst, const void *src, size_t n)
 {
@@ -25,7 +27,8 @@ void					*ft_memmove(void *dst, const void *src, size_t n)
 		return (ft_memcpy(dst, src, n));
 	long_dst = (unsigned long*)(dst + n);
 	long_src = (const unsigned long*)(src + n);
-	while (n > sizeof(long))
+	while (n > sizeof(long) &&
+	((*long_src - LOWBITS) & ~*long_src & HIGHBITS) == 0)
 	{
 		*(--long_dst) = *(--long_src);
 		n = n - sizeof(long);
