@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/06 00:55:34 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/12 11:17:53 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/12 12:18:45 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int				ft_atoi(const char *nptr)
 	{
 		pnb = atoint;
 		atoint = atoint * 10 - '0' + *ch++;
-		if (pnb != atoint / 10)
+		if (pnb != atoint / 10 && (atoint + 1))
 			return ((sign > 0) ? -1 : 0);
 	}
 	return (atoint * sign);
