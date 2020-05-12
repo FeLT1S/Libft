@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 23:05:12 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/12 13:56:43 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/12 21:18:04 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 char					*ft_strrchr(const char *str, int c)
 {
-	const char			*ch;
+	const unsigned char	*ch;
 	const unsigned long	*long_ch;
 	const unsigned long	long_c = (unsigned long)c * LOWBITS;
 
@@ -27,14 +27,14 @@ char					*ft_strrchr(const char *str, int c)
 			return ((void *)ch);
 		ch--;
 	}
-	long_ch = (unsigned long*)ch;
+	long_ch = (const unsigned long*)ch;
 	while (((((*(long_ch - 1) ^ long_c) - LOWBITS) & ~(*(long_ch - 1) ^ long_c)
 	& HIGHBITS) == 0) && (ch - str > (long int)sizeof(long)))
 		--long_ch;
-	ch = (const char*)long_ch;
+	ch = (const unsigned char*)long_ch;
 	while (*ch != (char)c && str != ch)
 		ch--;
-	if (*ch == (unsigned char)c)
+	if (*ch == (const unsigned char)c)
 		return ((void *)ch);
 	return (0);
 }
