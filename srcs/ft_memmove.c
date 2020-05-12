@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 00:13:32 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/12 22:25:18 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/12 22:29:55 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void					*ft_memmove(void *dst, const void *src, size_t n)
 	}
 	mod_dst = (unsigned char*)long_dst;
 	mod_src = (const unsigned char*)long_src;
-	while (n--)
+	while (--n)
 		*mod_dst-- = *mod_src--;
 	return (dst);
 }
