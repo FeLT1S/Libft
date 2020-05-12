@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/01 23:55:32 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/07 18:26:39 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/12 10:27:23 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ void					*ft_memset(void *s, int c, size_t n)
 	}
 	ch = (unsigned char*)long_ch;
 	while (n--)
-		*ch++ = c;
+		*ch++ = (unsigned char)c;
 	return (s);
 }

@@ -6,11 +6,13 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/06 00:38:47 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/07 07:11:11 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/12 10:28:43 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#define LOWBITS ((unsigned long)-1 / (unsigned char)-1)
+#define HIGHBITS (LOWBITS << 7)
 
 int						ft_strncmp(const char *s1, const char *s2, size_t n)
 {
@@ -21,7 +23,8 @@ int						ft_strncmp(const char *s1, const char *s2, size_t n)
 
 	long_s1 = (const unsigned long*)s1;
 	long_s2 = (const unsigned long*)s2;
-	while (*long_s1 == *long_s2 && n > sizeof(long) && *s1 != '\0')
+	while (*long_s1 == *long_s2 && n > sizeof(long) &&
+	((*long_s1 - LOWBITS) & ~*long_s1 & HIGHBITS) == 0)
 	{
 		n = n - sizeof(long);
 		long_s1++;

@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 07:16:48 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/08 08:08:34 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/12 10:37:35 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
+	if (!s)
+		return (0);
 	write(fd, s, ft_strlen(s));
 }

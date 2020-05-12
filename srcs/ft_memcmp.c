@@ -6,11 +6,13 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 05:53:20 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/07 07:10:05 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/12 10:27:58 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#define LOWBITS ((unsigned long)-1 / (unsigned char)-1)
+#define HIGHBITS (LOWBITS << 7)
 
 int						ft_memcmp(const void *s1, const void *s2, size_t n)
 {
@@ -21,7 +23,8 @@ int						ft_memcmp(const void *s1, const void *s2, size_t n)
 
 	long_s1 = (const unsigned long*)s1;
 	long_s2 = (const unsigned long*)s2;
-	while (*long_s1 == *long_s2 && n > sizeof(long))
+	while (*long_s1 == *long_s2 && n > sizeof(long) &&
+	((*long_s1 - LOWBITS) & ~*long_s1 & HIGHBITS) == 0)
 	{
 		n = n - sizeof(long);
 		long_s1++;
@@ -29,7 +32,7 @@ int						ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	ch_s1 = (const unsigned char*)long_s1;
 	ch_s2 = (const unsigned char*)long_s2;
-	while (*ch_s1 == *ch_s2 && n)
+	while (*ch_s1 == *ch_s2 && n && ch_s1)
 	{
 		n--;
 		ch_s1++;
