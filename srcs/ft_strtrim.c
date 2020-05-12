@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 05:47:02 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/12 12:04:52 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/12 12:08:59 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ char		*ft_strtrim(char const *s1, char const *set)
 	size_t	start;
 	size_t	end;
 
+	if (!s1 || !set)
+		return (0);
 	start = 0;
 	end = ft_strlen(s1) - 1;
 	start = setchecker(s1, set, start);
