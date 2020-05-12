@@ -6,7 +6,7 @@
 #    By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/06 23:47:35 by jiandre           #+#    #+#              #
-#    Updated: 2020/05/13 00:18:40 by jiandre          ###   ########.fr        #
+#    Updated: 2020/05/13 01:20:22 by jiandre          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,9 +50,6 @@ fclean: clean
 	@echo "libft.a was deleted"
 
 re: fclean all
-
-so:
-	gcc -L obj/*.o -shared -o libft.so $(FLAGS)
 
 norm:
 	@norminette
