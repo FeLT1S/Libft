@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 05:53:20 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/13 00:11:13 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/13 00:13:10 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ int						ft_memcmp(const void *s1, const void *s2, size_t n)
 	ch_s2 = (const unsigned char*)long_s2;
 	while (*ch_s1 == *ch_s2 && n)
 	{
+		if (*ch_s1 != *ch_s2)
+			return (*ch_s1 - *ch_s2);
 		n--;
 		ch_s1++;
 		ch_s2++;
 	}
-	if (!n)
-		return (0);
-	return (*ch_s1 - *ch_s2);
+	return (0)
 }
