@@ -6,13 +6,11 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/06 00:38:47 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/13 02:31:02 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/13 12:36:27 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#define LOWBITS ((unsigned long)-1 / (unsigned char)-1)
-#define HIGHBITS (LOWBITS << 7)
 
 int						ft_strncmp(const char *s1, const char *s2, size_t n)
 {
