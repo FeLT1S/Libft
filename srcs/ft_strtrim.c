@@ -6,13 +6,13 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 05:47:02 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/12 12:08:59 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/13 04:49:13 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			setchecker(char const *s1, char const *set, size_t start)
+int			setchecker(char const *s1, char const *set, size_t brd, int sg)
 {
 	int		check;
 	int		i;
@@ -25,37 +25,14 @@ int			setchecker(char const *s1, char const *set, size_t start)
 		i = 0;
 		while (set[i] != '\0')
 		{
-			if (set[i] == s1[start])
+			if (set[i] == s1[brd])
 				check = 1;
 			i++;
 		}
 		if (check)
-			start++;
+			brd += sg;
 	}
-	return (start);
-}
-
-int			setrchecker(char const *s1, char const *set, size_t finish)
-{
-	int		check;
-	int		i;
-
-	check = 1;
-	i = 0;
-	while (check)
-	{
-		i = 0;
-		check = 0;
-		while (set[i] != '\0')
-		{
-			if (set[i] == s1[finish])
-				check = 1;
-			i++;
-		}
-		if (check)
-			finish--;
-	}
-	return (finish);
+	return (brd);
 }
 
 char		*ft_strtrim(char const *s1, char const *set)
@@ -68,11 +45,11 @@ char		*ft_strtrim(char const *s1, char const *set)
 		return (0);
 	start = 0;
 	end = ft_strlen(s1) - 1;
-	start = setchecker(s1, set, start);
-	end = setrchecker(s1, set, end) + 1;
+	start = setchecker(s1, set, start, 1);
+	end = setchecker(s1, set, end, -1) + 1;
 	if (end < start)
 	{
-		if(!(dst = (char *)malloc(sizeof(char))))
+		if (!(dst = (char *)malloc(sizeof(char))))
 			return (0);
 	}
 	else
