@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/11 06:23:55 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/11 17:57:18 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/13 17:44:14 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,11 @@ t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 	if (!lst || !f || !del)
 		return (0);
-	newlst = ft_lstnew((*f)(lst->content));
-	while (lst->next)
+	tmp = ft_lstnew((*f)(lst->content));
+	newlst = tmp;
+	tmp = tmp->next;
+	lst = lst->next;
+	while (lst)
 	{
 		tmp = ft_lstnew((*f)(lst->content));
 		if (!tmp)
