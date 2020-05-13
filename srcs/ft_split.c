@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 23:43:45 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/11 17:04:30 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/14 01:07:43 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,13 @@
 
 long			ft_words(char const *s, char c, long words)
 {
-	const char *d;
-
-	d = s;
-	while (d)
+	while (s)
 	{
-		while (*d == c)
-			d++;
-		if (*d == '\0')
+		while (*s == c)
+			s++;
+		if (*s == '\0')
 			return (words);
-		d = ft_strchr(d, c);
+		s = ft_strchr(s, c);
 		words++;
 	}
 	return (words);
@@ -72,18 +69,14 @@ char			**ft_split(char const *s, char c)
 {
 	char		**out;
 	size_t		words;
-	char		**tmpout;
-	char const	*tmps;
 
 	words = 0;
 	words = ft_words(s, c, words);
 	out = (char **)malloc(sizeof(char*) * (words + 1));
 	if (!out)
 		return (0);
-	tmpout = out;
-	tmps = s;
-	ft_wordsplit(words, c, tmps, out);
-	if (!tmpout)
+	ft_wordsplit(words, c, s, out);
+	if (!out)
 		return (0);
-	return (tmpout);
+	return (out);
 }
