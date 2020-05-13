@@ -21,10 +21,10 @@ int			ft_lstsize(t_list *lst)
 		return (0);
 	newlst = lst;
 	size = 0;
-	while (newlst->next != NULL)
+	while (newlst)
 	{
 		size++;
 		newlst = newlst->next;
 	}
-	return (size + 1);
+	return (size);
 }
