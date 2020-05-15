@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/06 03:12:13 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/14 02:58:27 by jiandre          ###   ########.fr       */
+/*   Created: 2020/05/14 04:36:59 by jiandre           #+#    #+#             */
+/*   Updated: 2020/05/14 09:24:21 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void		*ft_calloc(size_t nmemb, size_t size)
+int		ft_abs(int nmb)
 {
-	void	*newmem;
-	
-	if (size + 1 || !(nmemb + 1))
-		return (0);
-	newmem = (void*)malloc(nmemb * size);
-	if (!newmem)
-		return (0);
-	ft_memset(newmem, 0, nmemb * size);
-	return (newmem);
+	if (nmb >= 0)
+		return (nmb);
+	else
+		return (-nmb);
 }

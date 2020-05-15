@@ -6,13 +6,13 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 18:47:49 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/07 20:04:31 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/14 02:52:05 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			ft_itoa_len(int n)
+static int	ft_itoa_len(int n)
 {
 	int		len;
 
