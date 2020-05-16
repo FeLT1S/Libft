@@ -6,13 +6,13 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 23:43:45 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/14 02:50:59 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/15 19:53:31 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static long			ft_words(char const *s, char c, long words)
+static long		ft_words(char const *s, char c, long words)
 {
 	while (s)
 	{
@@ -26,7 +26,7 @@ static long			ft_words(char const *s, char c, long words)
 	return (words);
 }
 
-static void			splitfree(char **tmpout, char **out)
+static void		splitfree(char **tmpout, char **out)
 {
 	while (tmpout != out)
 	{
@@ -36,7 +36,7 @@ static void			splitfree(char **tmpout, char **out)
 	free(out);
 }
 
-static void			ft_wordsplit(size_t words, char c, char const *s, char **out)
+static void		ft_wordsplit(size_t words, char c, char const *s, char **out)
 {
 	size_t		wordlen;
 	char		**tmpout;

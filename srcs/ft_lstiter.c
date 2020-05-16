@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 11:51:13 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/14 00:48:49 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/16 03:11:02 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void		ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (!lst || !f)
+	if (!lst)
 		return ;
 	while (lst)
 	{
