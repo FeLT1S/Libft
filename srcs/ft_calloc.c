@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/06 03:12:13 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/15 19:52:49 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/16 19:57:24 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void		*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*newmem;
 
-	if (size + 1 || !(nmemb + 1))
+	if (!(size + 1) || !(nmemb + 1))
 		return (0);
 	newmem = (void*)malloc(nmemb * size);
 	if (!newmem)
