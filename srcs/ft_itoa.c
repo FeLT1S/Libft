@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 18:47:49 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/17 18:32:15 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/17 19:45:21 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,21 +33,23 @@ char		*ft_itoa(int n)
 {
 	int		len;
 	char	*str;
+	long	m;
 
+	m = (long)n;
 	len = ft_itoa_len(n);
 	if ((str = (char *)malloc(sizeof(char) * (len + 1))) == NULL)
 		return (0);
 	*(str + len) = '\0';
-	(n == 0) ? (*str = '0') : (0);
-	while (n != 0)
+	if (m < 0)
 	{
-		*(str + (len-- - 1)) = n % 10 + '0';
-		n = n / 10;
-		if (n < 0)
-		{
-			*str = '-';
-			n = n / -1;
-		}
+		*str = '-';
+		m = m / -1;
+	}
+	(m == 0) ? (*str = '0') : (0);
+	while (m != 0)
+	{
+		*(str + (len-- - 1)) = m % 10 + '0';
+		m = m / 10;
 	}
 	return (str);
 }
