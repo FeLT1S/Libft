@@ -3,16 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hgranule <wp3d3p@yandex.ru>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 18:47:49 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/17 19:45:21 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/18 00:47:12 by hgranule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_itoa_len(int n)
+// КОД НЕ ЧИТАБЕЛЕН
+// Мысли проще
+
+static int	ft_itoa_len(int n) // size_t -> int
 {
 	int		len;
 
@@ -43,13 +46,13 @@ char		*ft_itoa(int n)
 	if (m < 0)
 	{
 		*str = '-';
-		m = m / -1;
+		m = -m;
 	}
-	(m == 0) ? (*str = '0') : (0);
+	m == 0 ? *str = '0' : 0;
 	while (m != 0)
 	{
-		*(str + (len-- - 1)) = m % 10 + '0';
-		m = m / 10;
+		str[--len] = m % 10 + '0';
+		m /= 10;
 	}
 	return (str);
 }

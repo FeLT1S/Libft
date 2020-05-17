@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hgranule <wp3d3p@yandex.ru>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/06 03:15:48 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/12 10:32:34 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/18 00:49:40 by hgranule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ char		*ft_strdup(const char *s)
 	size_t	len;
 
 	len = ft_strlen(s);
+	// здесь можешь сделать проверку если хочешь, но ты сначала к оригиналу обратись
 	dst = (char *)malloc(sizeof(char) * (len + 1));
 	if (!dst)
 		return (0);

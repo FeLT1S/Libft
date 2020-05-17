@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hgranule <wp3d3p@yandex.ru>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 09:39:09 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/11 17:55:16 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/18 00:28:18 by hgranule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void		ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*newlst;
 
-	if (!lst)
-		return ;
 	newlst = *lst;
 	if (*lst)
 	{

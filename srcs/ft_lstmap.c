@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hgranule <wp3d3p@yandex.ru>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/11 06:23:55 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/17 18:11:41 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/18 00:31:10 by hgranule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 	if (!lst)
 		return (0);
-	newlst = 0;
+	newlst = NULL;
 	while (lst)
 	{
 		tmp = ft_lstnew((*f)(lst->content));

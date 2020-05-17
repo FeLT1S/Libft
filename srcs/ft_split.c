@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hgranule <wp3d3p@yandex.ru>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 23:43:45 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/15 19:53:31 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/18 00:49:09 by hgranule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// КОД ОЧЕНЬ НЕ ЧИТАБЕЛЕН
 
 static long		ft_words(char const *s, char c, long words)
 {
@@ -33,7 +35,7 @@ static void		splitfree(char **tmpout, char **out)
 		free(*tmpout);
 		tmpout++;
 	}
-	free(out);
+	free(out); // ФАТАЛЬНЫЙ error!!!
 }
 
 static void		ft_wordsplit(size_t words, char c, char const *s, char **out)

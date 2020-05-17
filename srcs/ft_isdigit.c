@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hgranule <wp3d3p@yandex.ru>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/06 02:55:07 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/06 03:06:09 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/17 23:26:40 by hgranule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_isdigit(int c)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
+	return (c >= '0' && c <= '9');
 }

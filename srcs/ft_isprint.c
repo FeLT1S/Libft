@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hgranule <wp3d3p@yandex.ru>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/06 03:01:03 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/07 02:01:00 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/17 23:27:06 by hgranule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_isprint(int c)
 {
-	if (c >= 0x20 && c <= 0x7E)
-		return (1);
-	return (0);
+	return (c >= 0x20 && c <= 0x7E);
 }

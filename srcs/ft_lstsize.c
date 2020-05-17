@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hgranule <wp3d3p@yandex.ru>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 09:24:42 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/14 00:48:01 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/18 00:23:59 by hgranule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ int			ft_lstsize(t_list *lst)
 {
 	int		size;
 
-	if (!lst)
-		return (0);
 	size = 0;
 	while (lst)
 	{

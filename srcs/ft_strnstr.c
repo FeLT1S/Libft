@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hgranule <wp3d3p@yandex.ru>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 23:33:14 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/17 19:51:55 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/18 00:22:56 by hgranule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,15 @@ char			*ft_strnstr(const char *bg, const char *ltle, size_t len)
 {
 	const char	*ch_litinbg;
 	size_t ltle_len;
-	
+
 	ltle_len = ft_strlen(ltle);
-	if (*ltle == '\0')
+	if (!ltle[0])
 		return ((char*)bg);
-	while (ltle_len <= len-- && *bg)
+	while (*bg && ltle_len <= len--)
 	{
 		if (*bg == *ltle && !ft_strncmp(bg, ltle, ltle_len))
 			return ((char *)bg);
 		bg++;
 	}
-	bg++;
 	return (0);
 }

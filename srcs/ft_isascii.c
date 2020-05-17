@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
+/*   By: hgranule <wp3d3p@yandex.ru>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/06 02:58:27 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/06 03:35:35 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/17 23:26:21 by hgranule         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_isascii(int c)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
+	return (c >= 0 && c <= 127);
 }
