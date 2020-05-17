@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 23:33:14 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/17 19:48:01 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/17 19:51:55 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ char			*ft_strnstr(const char *bg, const char *ltle, size_t len)
 			return ((char *)bg);
 		bg++;
 	}
+	bg++;
 	return (0);
 }
