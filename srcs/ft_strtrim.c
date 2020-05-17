@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 05:47:02 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/13 12:33:31 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/17 14:46:57 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char		*ft_strtrim(char const *s1, char const *set)
 	end = ft_strlen(s1);
 	while (start < end && ft_strchr(set, *(s1 + start)))
 		start++;
-	while (start < end && ft_strchr(set, *(s1 + end)))
+	while (start < end && ft_strchr(set, *(s1 + end - 1)))
 		end--;
-	return (ft_substr(s1, start, end - start + 1));
+	return (ft_substr(s1, start, end - start));
 }

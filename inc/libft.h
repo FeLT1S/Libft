@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 20:44:17 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/14 10:18:53 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/17 12:20:07 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-int					ft_abs(int nmb);
 int					ft_atoi(const char *ch);
 void				ft_bzero(void *s, size_t n);
 void				*ft_calloc(size_t nmemb, size_t size);
@@ -40,7 +39,7 @@ void				ft_lstdelone(t_list *lst, void (*del)(void*));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstlast(t_list *lst);
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
-					void (*del)(void *));
+						void (*del)(void *));
 t_list				*ft_lstnew(void *content);
 int					ft_lstsize(t_list *lst);
 void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
@@ -49,9 +48,7 @@ int					ft_memcmp(const void *s1, const void *s2, size_t n);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
 void				*ft_memmove(void *dst, const void *src, size_t n);
 char				**ft_split(char const *s, char c);
-int					ft_sqrt(int nmb);
 void				*ft_memset(void *s, int c, size_t n);
-int					ft_pow(int nmb, int pow);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
