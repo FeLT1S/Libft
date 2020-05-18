@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 00:13:32 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/18 14:15:03 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/18 14:52:18 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define LOWBITS ((unsigned long)-1 / (unsigned char)-1)
 #define HIGHBITS (LOWBITS << 7)
 
-static void					*ft_memrcpy(void *dst, const void *src, size_t n)
+static void				*ft_memrcpy(void *dst, const void *src, size_t n)
 {
 	unsigned long		*long_dst;
 	const unsigned long	*long_src;
@@ -27,8 +27,8 @@ static void					*ft_memrcpy(void *dst, const void *src, size_t n)
 		*mod_dst-- = *mod_src--;
 		n--;
 	}
-	long_dst = (unsigned long*)mod_dst;
-	long_src = (const unsigned long*)mod_src;
+	long_dst = (unsigned long*)(mod_dst + 1);
+	long_src = (const unsigned long*)(mod_src + 1);
 	while (n > sizeof(long))
 	{
 		*(--long_dst) = *(--long_src);
@@ -36,7 +36,7 @@ static void					*ft_memrcpy(void *dst, const void *src, size_t n)
 	}
 	mod_dst = (unsigned char*)long_dst - 1;
 	mod_src = (const unsigned char*)long_src - 1;
-	while (n--)
+	while (n-- + 1)
 		*mod_dst-- = *mod_src--;
 	return (dst);
 }

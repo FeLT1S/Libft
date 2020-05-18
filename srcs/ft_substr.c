@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 04:47:34 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/18 14:02:03 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/18 14:54:34 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s || !(len + 1))
 		return (0);
 	if (start > ft_strlen(s))
-		return ("\0");
+		return ("");
 	dst = (char *)malloc(sizeof(char) * (len + 1));
 	if (!dst)
 		return (0);
