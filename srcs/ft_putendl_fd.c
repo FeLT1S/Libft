@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hgranule <wp3d3p@yandex.ru>                +#+  +:+       +#+        */
+/*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 07:19:42 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/17 23:50:22 by hgranule         ###   ########.fr       */
+/*   Updated: 2020/05/18 18:50:53 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
+	if (!s)
+		return ;
 	write(fd, s, ft_strlen(s));
 	write(fd, "\n", 1);
 }
