@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hgranule <wp3d3p@yandex.ru>                +#+  +:+       +#+        */
+/*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 00:13:32 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/17 23:49:04 by hgranule         ###   ########.fr       */
+/*   Updated: 2020/05/18 13:35:23 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,21 @@
 #define LOWBITS ((unsigned long)-1 / (unsigned char)-1)
 #define HIGHBITS (LOWBITS << 7)
 
-void					*ft_memmove(void *dst, const void *src, size_t n)
+void					*ft_memrcpy(void *dst, const void *src, size_t n)
 {
 	unsigned long		*long_dst;
 	const unsigned long	*long_src;
 	unsigned char		*mod_dst;
-	const unsigned char	*mod_src;
+	const unsigned char	*mod_src = (src + n);
 
-	if ((!dst && !src) || (!dst && !src && !n))
-		return (0);
-	if (dst < src)
-		return (ft_memcpy(dst, src, n));
-	long_dst = (unsigned long*)(dst + n);
-	long_src = (const unsigned long*)(src + n);
+	mod_dst = (unsigned long*)(dst + n);
+	while (((unsigned long)mod_dst & (sizeof(long) - 1)) != 0 && n)
+	{
+		*mod_dst-- = *mod_src--;
+		n--;
+	}
+	long_dst = (unsigned long*)mod_dst;
+	long_src = (const unsigned long*)mod_src;
 	while (n > sizeof(long))
 	{
 		*(--long_dst) = *(--long_src);
@@ -37,4 +39,13 @@ void					*ft_memmove(void *dst, const void *src, size_t n)
 	while (n--)
 		*mod_dst-- = *mod_src--;
 	return (dst);
+}
+
+void					*ft_memmove(void *dst, const void *src, size_t n)
+{
+	if (dst < src)
+		return (ft_memcpy(dst, src, n));
+	if (dst > src)
+		return (ft_memrcpy(dst, src, n));
+	return (0);
 }

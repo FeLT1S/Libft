@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hgranule <wp3d3p@yandex.ru>                +#+  +:+       +#+        */
+/*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 03:14:06 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/18 00:08:34 by hgranule         ###   ########.fr       */
+/*   Updated: 2020/05/18 13:35:45 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ char				*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	dst = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!dst)
 		return (0);
-	while (*(s + i) != '\0')
+	while (s[i] != '\0')
 	{
-		*(dst + i) = f(i, *(s + i)); // [i]
+		dst[i] = f(i, s[i]);
 		i++;
 	}
-	*(dst + i) = '\0';
+	dst[i] = '\0';
 	return (dst);
 }

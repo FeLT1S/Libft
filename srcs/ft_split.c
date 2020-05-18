@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hgranule <wp3d3p@yandex.ru>                +#+  +:+       +#+        */
+/*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 23:43:45 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/18 00:49:09 by hgranule         ###   ########.fr       */
+/*   Updated: 2020/05/18 13:35:54 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// КОД ОЧЕНЬ НЕ ЧИТАБЕЛЕН
 
 static long		ft_words(char const *s, char c, long words)
 {
@@ -28,14 +26,17 @@ static long		ft_words(char const *s, char c, long words)
 	return (words);
 }
 
-static void		splitfree(char **tmpout, char **out)
+static void		splitfree(char **out)
 {
-	while (tmpout != out)
+	size_t		i;
+
+	i = 0;
+	while (out[i])
 	{
-		free(*tmpout);
-		tmpout++;
+		free(out[i]);
+		i++;
 	}
-	free(out); // ФАТАЛЬНЫЙ error!!!
+	free(out);
 }
 
 static void		ft_wordsplit(size_t words, char c, char const *s, char **out)
@@ -58,7 +59,7 @@ static void		ft_wordsplit(size_t words, char c, char const *s, char **out)
 		*out = (char *)malloc(sizeof(char) * wordlen);
 		if (!out)
 		{
-			splitfree(tmpout, out);
+			splitfree(tmpout);
 			return ;
 		}
 		ft_strlcpy(*out, oldplc, wordlen);

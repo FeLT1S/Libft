@@ -3,19 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hgranule <wp3d3p@yandex.ru>                +#+  +:+       +#+        */
+/*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 18:47:49 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/18 00:47:12 by hgranule         ###   ########.fr       */
+/*   Updated: 2020/05/18 01:42:04 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// КОД НЕ ЧИТАБЕЛЕН
-// Мысли проще
-
-static int	ft_itoa_len(int n) // size_t -> int
+static int	ft_itoa_len(int n)
 {
 	int		len;
 
@@ -23,10 +20,9 @@ static int	ft_itoa_len(int n) // size_t -> int
 	while (n > 9 || n < -9)
 	{
 		len++;
-		n = n / 10;
+		n /= 10;
 	}
-	if (n <= 9 && n >= -9)
-		len++;
+	len++;
 	if (n < 0)
 		len++;
 	return (len);
@@ -42,10 +38,10 @@ char		*ft_itoa(int n)
 	len = ft_itoa_len(n);
 	if ((str = (char *)malloc(sizeof(char) * (len + 1))) == NULL)
 		return (0);
-	*(str + len) = '\0';
+	str[len] = '\0';
 	if (m < 0)
 	{
-		*str = '-';
+		str[0] = '-';
 		m = -m;
 	}
 	m == 0 ? *str = '0' : 0;

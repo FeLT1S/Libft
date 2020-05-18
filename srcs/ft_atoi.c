@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hgranule <wp3d3p@yandex.ru>                +#+  +:+       +#+        */
+/*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/06 00:55:34 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/18 00:46:07 by hgranule         ###   ########.fr       */
+/*   Updated: 2020/05/18 13:34:40 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// Названия переменных хуевые, Есть бесполезный код, сам код не читабелен
 
 int				ft_atoi(const char *nptr)
 {
@@ -21,12 +19,10 @@ int				ft_atoi(const char *nptr)
 	int			pnb;
 
 	sign = 1;
-	if ((*nptr >= 9 && *nptr <= 13) || *nptr == ' ')
-		return (ft_atoi(nptr + 1)); // error!!!
+	while ((*nptr >= 9 && *nptr <= 13) || *nptr == ' ')
+		return (nptr++);
 	if (*nptr == '-')
 		sign = -1;
-	// if ((*nptr >= '0' && *nptr <= '9') || (*nptr == '+'))
-	// 	sign = 1;
 	if ((*nptr == '+') || (*nptr == '-'))
 		nptr++;
 	atoint = 0;
