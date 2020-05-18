@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 00:13:32 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/18 13:57:27 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/18 13:59:58 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ void					*ft_memrcpy(void *dst, const void *src, size_t n)
 
 void					*ft_memmove(void *dst, const void *src, size_t n)
 {
+	if ((!dst && !src) || (!dst && !src && !n))
+		return (0);
 	if (dst < src)
 		return (ft_memcpy(dst, src, n));
 	if (dst > src)
