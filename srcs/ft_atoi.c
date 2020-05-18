@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/06 00:55:34 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/18 13:34:40 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/18 13:56:44 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int				ft_atoi(const char *nptr)
 
 	sign = 1;
 	while ((*nptr >= 9 && *nptr <= 13) || *nptr == ' ')
-		return (nptr++);
+		nptr++;
 	if (*nptr == '-')
 		sign = -1;
 	if ((*nptr == '+') || (*nptr == '-'))
