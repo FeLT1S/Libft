@@ -6,7 +6,7 @@
 #    By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/06 23:47:35 by jiandre           #+#    #+#              #
-#    Updated: 2020/05/17 20:14:01 by jiandre          ###   ########.fr        #
+#    Updated: 2020/05/24 20:41:12 by jiandre          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ ft_memset.c  ft_split.c ft_strmapi.c ft_substr.c ft_putchar_fd.c ft_putstr_fd.c 
 
 OBJS	=	$(addprefix $(OBJ_DIR)/,$(SRC:%.c=%.o))
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -g
 
 all: $(NAME)
 
@@ -39,7 +39,7 @@ $(NAME): $(OBJ_DIR) $(OBJS) $(HEAD) $(PFT_OBJ_DIR) $(PFT_OBJS) $(PFT_HEAD)
 	@echo "libft.a was created"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	@clang $F -g -c $< -I$(INC_DIR) -o$@
+	clang $F -g -c $< -I$(INC_DIR) -o$@
 
 clean:
 	@rm -Rf $(OBJ_DIR) $(PFT_OBJ_DIR)
