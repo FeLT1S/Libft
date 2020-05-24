@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 04:22:41 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/25 00:14:27 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/25 00:58:09 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void					*ft_memchr(const void *s, int c, size_t n)
 
 	if (!n)
 		return (0);
-	while (((unsigned long)ch & (sizeof(long) - 1)) != 0 && n)
+	while (n && ((unsigned long)ch & (sizeof(long) - 1)) != 0)
 	{
 		if (*ch == (unsigned char)c)
 			return ((void *)ch);
