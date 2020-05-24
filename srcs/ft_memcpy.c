@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/01 20:24:44 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/19 17:50:43 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/25 00:51:39 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void					*ft_memcpy(void *dst, const void *src, size_t n)
 	ch_dst = dst;
 	ch_src = src;
 	i = 0;
-	while (((unsigned long)dst & (sizeof(long) - 1)) != 0 && i++ < n)
+	while (i++ < n && ((unsigned long)dst & (sizeof(long) - 1)) != 0)
 		*ch_dst++ = *ch_src++;
 	long_dst = (unsigned long*)dst;
 	long_src = (const unsigned long*)src;

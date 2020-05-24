@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 00:13:32 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/18 20:50:44 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/25 00:52:02 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void				*ft_memrcpy(void *dst, const void *src, size_t n)
 	const unsigned char	*mod_src = (unsigned char*)src + n - 1;
 
 	mod_dst = (unsigned char*)dst + n - 1;
-	while (((unsigned long)mod_dst & (sizeof(long) - 1)) != 0 && n)
+	while (n && ((unsigned long)mod_dst & (sizeof(long) - 1)) != 0)
 	{
 		*mod_dst-- = *mod_src--;
 		n--;

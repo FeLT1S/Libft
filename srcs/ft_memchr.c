@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 04:22:41 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/24 21:02:43 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/25 00:14:27 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 static void				*mod_memchr(const unsigned char *ch, int c, size_t n)
 {
-	while (*ch != (unsigned char)c && n)
+	while (n && *ch != (unsigned char)c)
 	{
 		ch++;
 		n--;
@@ -40,8 +40,8 @@ void					*ft_memchr(const void *s, int c, size_t n)
 		n--;
 	}
 	long_ch = (unsigned long*)ch;
-	while (((((*long_ch ^ long_c) - LOWBITS) & ~(*long_ch ^ long_c) \
-	& HIGHBITS) == 0) && (n > sizeof(long)))
+	while ((n > sizeof(long)) && ((((*long_ch ^ long_c) - LOWBITS)\
+	& ~(*long_ch ^ long_c) & HIGHBITS) == 0))
 	{
 		n = n - sizeof(long);
 		long_ch++;

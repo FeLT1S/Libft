@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/08 04:47:34 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/23 21:04:09 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/24 21:41:45 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char *dst;
 
-	if (!s || len <= 0 || start >= ft_strlen(s))
+	if (!s || len == 0 || start >= ft_strlen(s))
 		return (ft_strdup(""));
 	if (start + len > ft_strlen(s))
 		len = ft_strlen(s) - 1;
