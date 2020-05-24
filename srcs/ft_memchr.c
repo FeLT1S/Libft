@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 04:22:41 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/24 20:39:18 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/24 20:42:54 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define LOWBITS ((unsigned long)-1 / (unsigned char)-1)
 #define HIGHBITS (LOWBITS << 7)
 
-static unsigned long	*long_memchr(unsigned long long_c, unsigned long *long_ch, size_t n)
+static const unsigned long	*long_memchr(unsigned long long_c, const unsigned long *long_ch, size_t n)
 {
 	while (((((*long_ch ^ long_c) - LOWBITS) & ~(*long_ch ^ long_c) \
 	& HIGHBITS) == 0) && (n > sizeof(long)))
