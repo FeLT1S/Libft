@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 23:05:12 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/24 19:37:21 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/24 20:40:31 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ char					*ft_strrchr(const char *str, int c)
 	ch = (const char*)long_ch - 1;
 	while (*ch != (char)c && str != ch)
 		ch--;
-	return ((ch == (char)c ? NULL : ch));
+	return ((*ch == (char)c ? NULL : ch));
 }
