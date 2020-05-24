@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hgranule <wp3d3p@yandex.ru>                +#+  +:+       +#+        */
+/*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 04:22:41 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/17 23:46:00 by hgranule         ###   ########.fr       */
+/*   Updated: 2020/05/24 19:30:43 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void					*ft_memchr(const void *s, int c, size_t n)
 	const unsigned long	*long_ch;
 	const unsigned long	long_c = (unsigned char)c * LOWBITS;
 
-	while (((unsigned long)ch & (sizeof(long) - 1)) != 0 && n != 1)
+	while (((unsigned long)ch & (sizeof(long) - 1)) != 0 && n)
 	{
 		if (*ch == (unsigned char)c)
 			return ((void *)ch);
@@ -35,7 +35,10 @@ void					*ft_memchr(const void *s, int c, size_t n)
 		long_ch++;
 	}
 	ch = (unsigned char*)long_ch;
-	while (*ch != (unsigned char)c && n-- != 1)
+	while (*ch != (unsigned char)c && n)
+	{
 		ch++;
-	return (*ch == (unsigned char)c ? (void *)ch : NULL);
+		n--;
+	}
+	return ((void *)(n == (size_t)-1 ? NULL : ch));
 }

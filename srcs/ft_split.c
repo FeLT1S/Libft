@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 23:43:45 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/18 13:35:54 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/19 18:28:24 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ static long		ft_words(char const *s, char c, long words)
 {
 	while (s)
 	{
+		if (*s == '\0')
+			return (0);
 		while (*s == c)
 			s++;
 		if (*s == '\0')
@@ -73,6 +75,8 @@ char			**ft_split(char const *s, char c)
 	char		**out;
 	size_t		words;
 
+	if (s == 0)
+		return (0);
 	words = 0;
 	words = ft_words(s, c, words);
 	out = (char **)malloc(sizeof(char*) * (words + 1));
