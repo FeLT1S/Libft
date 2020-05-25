@@ -6,7 +6,7 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 23:05:12 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/25 00:42:00 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/25 05:58:07 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,15 @@
 
 char					*ft_strrchr(const char *str, int c)
 {
-	const char			*ch;
-	const unsigned long	*long_ch;
-	const unsigned long	long_c = (unsigned long)c * LOWBITS;
+	const char *sym = ft_strchr(str, c);
+	const char *tmp = NULL;
 
-	ch = str + ft_strlen(str);
-	while (ch != str && ((unsigned long)ch & (sizeof(long) - 1)) != 0)
+	if (!c)
+		return (str + ft_strlen(str));
+	while(sym)
 	{
-		if (*ch == (unsigned char)c)
-			return ((void *)ch);
-		ch--;
+		tmp = sym;
+		sym = ft_strchr(sym + 1, c);
 	}
-	long_ch = (unsigned long*)(ch + 1);
-	while ((ch - str > (long int)sizeof(long)) && ((((*(long_ch - 1) ^ long_c)\
-	- LOWBITS) & ~(*(long_ch - 1) ^ long_c) & HIGHBITS) == 0))
-	{
-		if (*long_ch & HIGHBITS)
-			return (0);
-		--long_ch;
-	}
-	ch = (const char*)long_ch - 1;
-	while (*ch != (char)c && str != ch)
-		ch--;
-	return ((char *)(*ch == (char)c ? ch : NULL));
+	return ((char *)tmp);
 }
