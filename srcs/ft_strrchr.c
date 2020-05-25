@@ -6,13 +6,11 @@
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 23:05:12 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/25 05:58:07 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/05/25 06:00:24 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#define LOWBITS ((unsigned long)-1 / (unsigned char)-1)
-#define HIGHBITS (LOWBITS << 7)
 
 char					*ft_strrchr(const char *str, int c)
 {
