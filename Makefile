@@ -6,7 +6,7 @@
 #    By: jiandre <kostbg1@gmail.com>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/06 23:47:35 by jiandre           #+#    #+#              #
-#    Updated: 2020/06/01 14:45:34 by jiandre          ###   ########.fr        #
+#    Updated: 2020/08/27 03:28:20 by jiandre          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,11 @@ NAME = libft.a
 INC_DIR		= 	./inc
 SRC_DIR		= 	./srcs
 OBJ_DIR		= 	./obj
+PFT_DIR		= 	./pft
 
-HEAD		=	$(INC_DIR)/libft.h
+HEAD		=	$(INC_DIR)/libft.h\
+				$(INC_DIR)/get_next_line.h\
+				$(INC_DIR)/ft_printf.h
 
 SRC			=	ft_atoi.c\
 				ft_isalpha.c\
@@ -60,24 +63,31 @@ SRC			=	ft_atoi.c\
 				ft_lstmap.c\
 				ft_lstsize.c\
 				ft_lstadd_front.c\
-				ft_lstlast.c
+				ft_lstlast.c\
+				get_next_line.c\
+				ft_printf.c\
+				ft_printf_cs.c\
+				ft_printf_diux.c\
+				ft_printf_p.c\
+				ft_printf_pars.c\
+				ft_putnbr_base_fd.c
 
 OBJS		=	$(addprefix $(OBJ_DIR)/,$(SRC:%.c=%.o))
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS		=	-Wall -Wextra -Werror
 
 all: $(NAME)
 
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
-
+	
 $(NAME): $(OBJ_DIR) $(OBJS) $(HEAD)
 	@ar rc $(NAME) $(OBJS)
 	@ranlib $(NAME)
 	@echo "libft.a was created"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	@clang $F -g -c $< -I$(INC_DIR) -o $@ -MMD 
+	clang $(FLAGS) -g -c $< -I$(INC_DIR) -o $@ -MMD 
 
 clean:
 	@rm -Rf $(OBJ_DIR)
@@ -92,4 +102,4 @@ re: fclean all
 norm:
 	@norminette
 
-.PHONY: all clean fclean re norm
+.PHONY: all clean fclean re norm pft

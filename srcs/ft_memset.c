@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jiandre <kostbg1@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/01 23:55:32 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/25 00:52:28 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/06/01 16:54:12 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void					*ft_memset(void *s, int c, size_t n)
 
 	ch = s;
 	long_ch = (unsigned long*)ch;
-	while (n &&((unsigned long)ch & (sizeof(long) - 1)) != 0)
+	while (n && ((unsigned long)ch & (sizeof(long) - 1)) != 0)
 	{
 		if (*ch == '\0')
 			return (s);

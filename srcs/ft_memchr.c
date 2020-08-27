@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jiandre <kostbg1@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/02 04:22:41 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/25 00:58:09 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/06/01 16:54:22 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,5 @@ void					*ft_memchr(const void *s, int c, size_t n)
 		long_ch++;
 	}
 	ch = (unsigned char*)long_ch;
-	return(mod_memchr(ch, c, n));
+	return (mod_memchr(ch, c, n));
 }
