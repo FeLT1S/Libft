@@ -6,7 +6,7 @@
 /*   By: jiandre <kostbg1@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 20:44:17 by jiandre           #+#    #+#             */
-/*   Updated: 2020/09/04 13:17:06 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/10/31 18:02:02 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,13 @@ typedef struct		s_list
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct		s_dls
+{
+	void			*cont;
+	struct s_dls	*next;
+	struct s_dls	*prev;
+}					t_dls;
 
 int					ft_atoi(const char *ch);
 void				ft_bzero(void *s, size_t n);
@@ -39,7 +46,7 @@ void				ft_lstdelone(t_list *lst, void (*del)(void*));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstlast(t_list *lst);
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
-						void (*del)(void *));
+					void (*del)(void *));
 t_list				*ft_lstnew(void *content);
 int					ft_lstsize(t_list *lst);
 void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
@@ -69,5 +76,11 @@ int					ft_tolower(int c);
 int					ft_toupper(int c);
 int					ft_printf(const char *str, ...);
 int					get_next_line(int fd, char **line);
-
+t_dls				*ft_dlsinit(void *cont);
+t_dls				*ft_dlsadd_front(t_dls *dls, void *cont);
+t_dls				*ft_dlsadd_back(t_dls *dls, void *cont);
+t_dls				*ft_dlsdelelem(t_dls *node);
+t_dls				*ft_dlsdelroot(t_dls *node);
+t_dls				*ft_dlsdeltail(t_dls *node);
+void				ft_dlsclear(t_dls *root);
 #endif
