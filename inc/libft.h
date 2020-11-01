@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jiandre <kostbg1@gmail.com>                +#+  +:+       +#+        */
+/*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 20:44:17 by jiandre           #+#    #+#             */
-/*   Updated: 2020/10/31 18:02:02 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/11/01 18:14:51 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,4 +83,6 @@ t_dls				*ft_dlsdelelem(t_dls *node);
 t_dls				*ft_dlsdelroot(t_dls *node);
 t_dls				*ft_dlsdeltail(t_dls *node);
 void				ft_dlsclear(t_dls *root);
+t_dls				*ft_dlsadd_root(t_dls **root, t_dls *node, void *cont);
+t_dls				*ft_dlsadd_tail(t_dls *node, void *cont);
 #endif
