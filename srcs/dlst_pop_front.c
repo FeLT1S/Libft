@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dlsdelroot.c                                    :+:      :+:    :+:   */
+/*   dlst_pop_front.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jiandre <kostbg1@gmail.com>                +#+  +:+       +#+        */
+/*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/31 17:45:16 by jiandre           #+#    #+#             */
-/*   Updated: 2020/10/31 17:52:33 by jiandre          ###   ########.fr       */
+/*   Created: 2020/11/02 20:28:57 by jiandre           #+#    #+#             */
+/*   Updated: 2020/11/02 20:32:02 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_dls	*ft_dlsdelroot(t_dls *node)
+t_node		*dlst_pop_front(t_node **root)
 {
-	t_dls	*tmp;
-
-	while (node->prev)
-		node = node->prev;
-	tmp = node->next;
-	tmp->prev = NULL;
-	free(node);
+	t_node	*tmp;
+	tmp = *root;
+	*root = (*root)->next;
+	(*root)->prev = NULL;
 	return (tmp);
 }

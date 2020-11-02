@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dlsdeltail.c                                    :+:      :+:    :+:   */
+/*   dlst_push_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jiandre <kostbg1@gmail.com>                +#+  +:+       +#+        */
+/*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/31 17:49:39 by jiandre           #+#    #+#             */
-/*   Updated: 2020/10/31 17:55:47 by jiandre          ###   ########.fr       */
+/*   Created: 2020/11/02 20:12:05 by jiandre           #+#    #+#             */
+/*   Updated: 2020/11/02 20:13:20 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_dls	*ft_dlsdeltail(t_dls *node)
+void				dlst_push_front(t_node **root, t_node *new_elem)
 {
-	t_dls *tmp;
-
-	while (node->next)
-		node = node->next;
-	tmp = node->prev;
-	tmp->next = NULL;
-	free(node);
-	return (tmp);
+	new_elem->next = *root;
+	(*root)->prev = new_elem;
+	*root = new_elem;
 }

@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dlsinit.c                                       :+:      :+:    :+:   */
+/*   dlst_elem.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jiandre <kostbg1@gmail.com>                +#+  +:+       +#+        */
+/*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/31 16:16:46 by jiandre           #+#    #+#             */
-/*   Updated: 2020/10/31 17:19:02 by jiandre          ###   ########.fr       */
+/*   Created: 2020/11/02 20:34:06 by jiandre           #+#    #+#             */
+/*   Updated: 2020/11/02 20:36:54 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_dls	*ft_dlsinit(void *cont)
+t_node				*dlst_elem(void *content)
 {
-	t_dls	*dls;
+	t_node	*dls;
 
-	if (!(dls = (t_dls*)malloc(sizeof(t_dls))))
+	if (!(dls = (t_node*)malloc(sizeof(t_node))))
 		return (NULL);
-	dls->cont = cont;
+	dls->content = content;
 	dls->next = NULL;
 	dls->prev = NULL;
 	return (dls);

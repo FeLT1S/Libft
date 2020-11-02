@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dlsadd_front.c                                  :+:      :+:    :+:   */
+/*   nodet_insert.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jiandre <kostbg1@gmail.com>                +#+  +:+       +#+        */
+/*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/31 16:43:52 by jiandre           #+#    #+#             */
-/*   Updated: 2020/10/31 17:37:49 by jiandre          ###   ########.fr       */
+/*   Created: 2020/11/02 18:44:27 by jiandre           #+#    #+#             */
+/*   Updated: 2020/11/02 20:03:16 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_dls	*ft_dlsadd_front(t_dls *dls, void *cont)
+void				nodet_insert(t_node **node, t_node *new_elem)
 {
-	t_dls *new_elem;
-	t_dls *tmp;
+	t_node *new_elem;
+	t_node *tmp;
 
-	if (!(new_elem = (t_dls*)malloc(sizeof(t_dls))))
+	if (!(new_elem = (t_node*)malloc(sizeof(t_node))))
 		return (NULL);
-	tmp = dls->next;
-	dls->next = new_elem;
-	new_elem->cont = cont;
+	tmp = (*node)->next;
+	(*node)->next = new_elem;
 	new_elem->next = tmp;
-	new_elem->prev = dls;
+	new_elem->prev = node;
 	if (tmp)
 		tmp->prev = new_elem;
 	return (new_elem);

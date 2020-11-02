@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dlsadd_root.c                                   :+:      :+:    :+:   */
+/*   dlst_pop_back.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/01 18:01:20 by jiandre           #+#    #+#             */
-/*   Updated: 2020/11/01 18:22:06 by jiandre          ###   ########.fr       */
+/*   Created: 2020/11/02 20:15:21 by jiandre           #+#    #+#             */
+/*   Updated: 2020/11/02 20:17:30 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_dls	*ft_dlsadd_root(t_dls **root, t_dls *node, void *cont)
+t_node				*dlst_pop_back(t_node **root)
 {
-	if (!node)
-		node = *root;
-	while (node->prev)
-		node = node->prev;
-	if (root)
-	{
-		*root = ft_dlsadd_back(node, cont);
-		return (*root);
-	}
-	else
-		node = ft_dlsadd_back(node, cont);
-	return (node);
+	t_node *tmp;
+
+	tmp = *root;
+	while (tmp->next)
+		tmp = tmp->next;
+	tmp->prev->next = NULL;
+	tmp->prev = NULL;
+	return (tmp);
 }

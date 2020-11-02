@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dlsdelelem.c                                    :+:      :+:    :+:   */
+/*   dlst_push_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jiandre <kostbg1@gmail.com>                +#+  +:+       +#+        */
+/*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/31 17:31:13 by jiandre           #+#    #+#             */
-/*   Updated: 2020/10/31 17:45:34 by jiandre          ###   ########.fr       */
+/*   Created: 2020/11/02 20:05:06 by jiandre           #+#    #+#             */
+/*   Updated: 2020/11/02 20:14:57 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_dls	*ft_dlsdelelem(t_dls *node)
+void				dlst_push_back(t_node **root, t_node *new_elem)
 {
-	t_dls	*prev;
-	t_dls	*next;
+	t_node *tmp;
 
-	prev = node->prev;
-	next = node->next;
-	if (prev)
-		prev->next = node->next;
-	if (next)
-		next->prev = node->prev;
-	free(node);
-	return (prev);
+	tmp = *root;
+	while (tmp->next)
+		tmp = tmp->next;
+	tmp->next = new_elem;
+	new_elem->prev = tmp;
 }
