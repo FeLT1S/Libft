@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   nodet_insert.c                                      :+:      :+:    :+:   */
+/*   dlst_size.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/02 18:44:27 by jiandre           #+#    #+#             */
-/*   Updated: 2020/11/02 20:03:16 by jiandre          ###   ########.fr       */
+/*   Created: 2020/11/05 16:15:22 by jiandre           #+#    #+#             */
+/*   Updated: 2020/11/05 16:22:40 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void				nodet_insert(t_node **node, t_node *new_elem)
+size_t				dlst_size(t_node **root)
 {
+	size_t len;
 	t_node *tmp;
 
-	tmp = (*node)->next;
-	(*node)->next = new_elem;
-	new_elem->next = tmp;
-	new_elem->prev = *node;
-	if (tmp)
-		tmp->prev = new_elem;
+	if (!*root)
+		return (0);
+	len = 1;
+	tmp = *root;
+	while (tmp->next)
+	{
+		tmp = tmp->next;
+		len++;
+	}
+	return (len);
 }

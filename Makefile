@@ -6,7 +6,7 @@
 #    By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/06 23:47:35 by jiandre           #+#    #+#              #
-#    Updated: 2020/11/02 20:03:16 by jiandre          ###   ########.fr        #
+#    Updated: 2020/11/05 16:17:54 by jiandre          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,15 +71,16 @@ SRC			=	ft_atoi.c\
 				ft_printf_p.c\
 				ft_printf_pars.c\
 				ft_putnbr_base_fd.c\
-				ft_nodeinit.c\
-				ft_nodeadd_front.c\
-				ft_nodeadd_back.c\
-				ft_nodedelelem.c\
-				ft_nodedelroot.c\
-				ft_nodedeltail.c\
-				ft_nodeclear.c\
-				ft_nodeadd_root.c\
-				ft_nodeadd_tail.c
+				dlst_del.c\
+				dlst_del_elem.c\
+				dlst_elem.c\
+				dlst_insert.c\
+				dlst_pop_back.c\
+				dlst_pop_front.c\
+				dlst_push_back.c\
+				dlst_push_front.c\
+				dlst_size.c
+				
 
 OBJS		=	$(addprefix $(OBJ_DIR)/,$(SRC:%.c=%.o))
 
