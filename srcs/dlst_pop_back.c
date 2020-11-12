@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   dlst_pop_back.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jiandre <kostbg1@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 20:15:21 by jiandre           #+#    #+#             */
-/*   Updated: 2020/11/02 20:17:30 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/11/13 02:31:44 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ t_node				*dlst_pop_back(t_node **root)
 	tmp = *root;
 	while (tmp->next)
 		tmp = tmp->next;
+	
 	tmp->prev->next = NULL;
 	tmp->prev = NULL;
 	return (tmp);
