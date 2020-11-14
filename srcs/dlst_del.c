@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   dlst_del.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jiandre <kostbg1@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 16:11:57 by jiandre           #+#    #+#             */
-/*   Updated: 2020/11/05 16:36:42 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/11/14 16:43:39 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void				dlst_del(t_node **root, t_del_func deletor)
 {
 	t_node *tmp;
+
 	while ((*root)->next)
 	{
 		tmp = (*root)->next;
