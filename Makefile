@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+         #
+#    By: jiandre <kostbg1@gmail.com>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/06 23:47:35 by jiandre           #+#    #+#              #
-#    Updated: 2020/11/05 16:17:54 by jiandre          ###   ########.fr        #
+#    Updated: 2020/11/15 00:07:12 by jiandre          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,7 +79,8 @@ SRC			=	ft_atoi.c\
 				dlst_pop_front.c\
 				dlst_push_back.c\
 				dlst_push_front.c\
-				dlst_size.c
+				dlst_size.c\
+				ft_strcmp.c
 				
 
 OBJS		=	$(addprefix $(OBJ_DIR)/,$(SRC:%.c=%.o))

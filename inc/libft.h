@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jiandre <kostbg1@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/05 20:44:17 by jiandre           #+#    #+#             */
-/*   Updated: 2020/11/02 16:28:05 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/11/15 00:06:13 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,5 @@ int					ft_tolower(int c);
 int					ft_toupper(int c);
 int					ft_printf(const char *str, ...);
 int					get_next_line(int fd, char **line);
+int					ft_strcmp(const char *s1, const char *s2);
 #endif
