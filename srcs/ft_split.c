@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jiandre <jiandre@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jiandre <kostbg1@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 23:43:45 by jiandre           #+#    #+#             */
-/*   Updated: 2020/05/19 18:28:24 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/11/18 23:45:18 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static long		ft_words(char const *s, char c, long words)
 	return (words);
 }
 
-static void		splitfree(char **out)
+void			str_arr_free(char **out)
 {
 	size_t		i;
 
@@ -61,7 +61,7 @@ static void		ft_wordsplit(size_t words, char c, char const *s, char **out)
 		*out = (char *)malloc(sizeof(char) * wordlen);
 		if (!out)
 		{
-			splitfree(tmpout);
+			str_arr_free(tmpout);
 			return ;
 		}
 		ft_strlcpy(*out, oldplc, wordlen);

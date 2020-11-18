@@ -6,7 +6,7 @@
 /*   By: jiandre <kostbg1@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 16:15:22 by jiandre           #+#    #+#             */
-/*   Updated: 2020/11/14 16:43:06 by jiandre          ###   ########.fr       */
+/*   Updated: 2020/11/18 23:38:02 by jiandre          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,12 @@ size_t				dlst_size(t_node **root)
 	size_t len;
 	t_node *tmp;
 
-	if (!*root)
-		return (0);
-	len = 1;
+	len = 0;
 	tmp = *root;
-	while (tmp->next)
+	while (tmp)
 	{
-		tmp = tmp->next;
 		len++;
+		tmp = tmp->next;
 	}
 	return (len);
 }
